@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# Use the same pinned Hugo release on macOS, Linux, and GitHub Actions.
+set -euo pipefail
+
+project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+version="$(tr -d '[:space:]' < "${project_root}/.hugo-version")"
+
+case "$(uname -s)" in
+  Darwin) platform="darwin-universal" ;;
+  Linux)
+    case "$(uname -m)" in
+      x86_64) platform="linux-amd64" ;;
+      aarch64|arm64) platform="linux-arm64" ;;
+      *) printf 'Unsupported Linux architecture.\n' >&2; exit 1 ;;
+    esac
+    ;;
+  *) printf 'Use macOS or Linux (including WSL) to run this script.\n' >&2; exit 1 ;;
+esac
+
+tool_dir="${project_root}/.local/hugo/${version}/${platform}"
+binary="${tool_dir}/hugo"
+
+if [[ ! -x "${binary}" ]]; then
+  mkdir -p "${tool_dir}"
+  download_dir="$(mktemp -d "${tool_dir}/download.XXXXXX")"
+  trap 'rm -rf "${download_dir}"' EXIT
+  if [[ "${platform}" == darwin-* ]]; then
+    archive="hugo_${version}_${platform}.pkg"
+  else
+    archive="hugo_${version}_${platform}.tar.gz"
+  fi
+  release_url="https://github.com/gohugoio/hugo/releases/download/v${version}"
+  printf 'Downloading Hugo %s for %s…\n' "${version}" "${platform}" >&2
+
+  curl --fail --location --silent --show-error --retry 3 --connect-timeout 15 \
+    --max-time 180 "${release_url}/${archive}" -o "${download_dir}/${archive}"
+  curl --fail --location --silent --show-error --retry 3 --connect-timeout 15 \
+    --max-time 60 "${release_url}/hugo_${version}_checksums.txt" \
+    -o "${download_dir}/checksums.txt"
+
+  expected="$(awk -v name="${archive}" '$2 == name { print $1 }' "${download_dir}/checksums.txt")"
+  if command -v sha256sum >/dev/null 2>&1; then
+    actual="$(sha256sum "${download_dir}/${archive}" | awk '{ print $1 }')"
+  else
+    actual="$(shasum -a 256 "${download_dir}/${archive}" | awk '{ print $1 }')"
+  fi
+
+  if [[ -z "${expected}" || "${actual}" != "${expected}" ]]; then
+    printf 'Hugo download checksum verification failed.\n' >&2
+    exit 1
+  fi
+
+  if [[ "${platform}" == darwin-* ]]; then
+    # Extract the official macOS package without installing it system-wide.
+    pkgutil --expand-full "${download_dir}/${archive}" "${download_dir}/package"
+    source_binary="$(find "${download_dir}/package" -type f -name hugo -print -quit)"
+  else
+    tar -xzf "${download_dir}/${archive}" -C "${download_dir}" hugo
+    source_binary="${download_dir}/hugo"
+  fi
+  if [[ ! -f "${source_binary}" ]]; then
+    printf 'The Hugo package did not contain an executable.\n' >&2
+    exit 1
+  fi
+  chmod +x "${source_binary}"
+  mv "${source_binary}" "${binary}"
+  rm -rf "${download_dir}"
+  trap - EXIT
+fi
+
+exec "${binary}" "$@"

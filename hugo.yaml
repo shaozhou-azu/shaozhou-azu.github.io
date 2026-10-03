@@ -1,0 +1,111 @@
+# 发布时由 GitHub Actions 自动设置实际网址。
+baseURL: https://example.org/
+title: Azu's Notes
+theme: PaperMod
+locale: zh-CN
+defaultContentLanguage: zh
+hasCJKLanguage: true
+timeZone: Asia/Shanghai
+enableRobotsTXT: true
+enableEmoji: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+pagination:
+  pagerSize: 10
+
+permalinks:
+  page:
+    posts: /posts/:year-:month-:day-:slug/
+
+outputs:
+  home: [HTML, RSS, JSON]
+
+taxonomies:
+  tag: tags
+
+params:
+  description: Azu 的个人主页，记录学习笔记、技术探索与日常思考。
+  keywords: [博客, 学习笔记, 技术, 研究]
+  author: Azu
+  defaultTheme: light
+  disableThemeToggle: false
+  mainSections: [posts]
+  DateFormat: "2006 年 1 月 2 日"
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowRssButtonInSectionTermList: true
+  ShowBreadCrumbs: false
+  ShowShareButtons: false
+  ShowWordCount: false
+  disableSpecial1stPost: true
+  showtoc: true
+  tocopen: false
+  comments: false
+  math: false
+
+  homeInfoParams:
+    Title: 你好，我是 Azu。
+    Content: 这里是我的个人主页与博客，记录学习笔记、技术探索和日常思考。
+
+  assets:
+    disableHLJS: true
+    favicon: favicon.svg
+    favicon16x16: favicon-16x16.png
+    favicon32x32: favicon-32x32.png
+    apple_touch_icon: apple-touch-icon.png
+    safari_pinned_tab: favicon.svg
+    theme_color: "#ffffff"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 2
+    keys: [title, permalink, summary, content]
+
+menu:
+  main:
+    - identifier: posts
+      name: 文章
+      pageRef: /posts
+      weight: 10
+    - identifier: archives
+      name: 归档
+      pageRef: /archives
+      weight: 20
+    - identifier: tags
+      name: 标签
+      pageRef: /tags
+      weight: 30
+    - identifier: search
+      name: 搜索
+      pageRef: /search
+      weight: 40
+    - identifier: about
+      name: 关于
+      pageRef: /about
+      weight: 50
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block: [['\[', '\]'], ['$$', '$$']]
+          inline: [['\(', '\)']]
+    renderer:
+      unsafe: false
+  highlight:
+    noClasses: false
+    codeFences: true
+    lineNos: false
+  tableOfContents:
+    startLevel: 2
+    endLevel: 3
+    ordered: false

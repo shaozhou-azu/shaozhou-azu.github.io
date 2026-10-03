@@ -1,0 +1,7 @@
+{{- if .Param "math" }}
+<link rel="stylesheet" href="{{ "vendor/katex/katex.min.css" | relURL }}">
+<script defer src="{{ "vendor/katex/katex.min.js" | relURL }}"></script>
+<script defer src="{{ "vendor/katex/auto-render.min.js" | relURL }}"></script>
+{{- $math := resources.Get "js/math.js" | resources.Minify | fingerprint }}
+<script defer src="{{ $math.RelPermalink }}" integrity="{{ $math.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}
