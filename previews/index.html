@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Azu · 主题试读</title>
+  <link rel="stylesheet" href="/hextra/vendor/noto-sans-sc/index.css">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f5f6fa;color:#202632;font:15px/1.65 "Noto Sans SC Variable","PingFang SC",sans-serif}button,select{font:inherit}a{color:inherit}button,a,select{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #698bdc;outline-offset:4px}button{cursor:pointer}header{max-width:1320px;padding:28px 32px 16px;margin:auto}.eyebrow{font-size:12px;color:#687181;letter-spacing:.12em}h1{font-size:30px;font-weight:600;letter-spacing:-.04em;margin:5px 0 8px}header p{margin:0;color:#6c7481;font-size:14px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1320px;margin:auto;padding:14px 32px 20px;flex-wrap:wrap}.tabs{display:flex;gap:6px;flex-wrap:wrap}.tab{border:1px solid transparent;background:transparent;border-radius:9px;padding:8px 15px;color:#5c6574}.tab[aria-selected=true]{background:#fff;color:#222b3b;border-color:#dfe3eb;box-shadow:0 2px 5px #20263208}.tools{display:flex;gap:10px;align-items:center}select{max-width:180px;border:1px solid #dfe3eb;background:white;color:#515b69;border-radius:8px;padding:8px 10px;font-size:13px}.text-link{font-size:13px;text-decoration:none;color:#526783}.text-link:hover{text-decoration:underline}.gallery{max-width:1320px;padding:0 32px 32px;margin:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.card{border:1px solid #e0e4ed;border-radius:14px;background:white;overflow:hidden;box-shadow:0 5px 15px #17223b04}.image-button{display:block;border:0;padding:0;background:#fff;width:100%;aspect-ratio:16/9;overflow:hidden;text-align:left}.image-button img{display:block;width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .2s}.image-button:hover img{transform:scale(1.015)}.caption{padding:17px 20px;border-top:1px solid #edf0f5;display:flex;align-items:center;justify-content:space-between;gap:12px}.caption h2{margin:0;font-size:19px;font-weight:600}.caption p{margin:3px 0 0;font-size:13px;color:#7c8491}.label{font-size:11px;color:#9aa2ad;margin-right:8px}.read-button{white-space:nowrap;border:1px solid #dde3ed;border-radius:8px;background:#f8f9fc;padding:7px 12px;font-size:13px;color:#516b9c}.read-button:hover{background:#eef3fc}.frame-wrap{margin:0 24px 24px;border:1px solid #dde3ed;border-radius:12px;overflow:hidden;background:white}iframe{display:block;width:100%;height:calc(100vh - 230px);min-height:500px;border:0}.status{margin:0 32px 12px;color:#6c7481;font-size:12px}footer{max-width:1320px;margin:auto;padding:0 32px 25px;font-size:12px;color:#9299a4}footer a{color:#737f93;text-decoration:none}footer a:hover{text-decoration:underline}[hidden]{display:none!important}@media(min-width:1500px){.gallery{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.caption{align-items:flex-start;flex-direction:column}}@media(max-width:650px){header{padding:24px 20px 10px}h1{font-size:25px}.toolbar{padding:10px 16px 16px;gap:12px}.tab{padding:7px 10px}.gallery{grid-template-columns:1fr;padding:0 16px 20px;gap:16px}.tools{width:100%;justify-content:space-between}.frame-wrap{margin:0 8px 16px;border-radius:8px}iframe{height:calc(100vh - 290px);min-height:420px}.status{margin-left:20px}footer{padding:0 20px 24px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">AZU · 主题试读</div>
+    <h1>同一篇文章，四种风格</h1>
+    <p>用 Personal Agent 研究长文试读，比较中文正文、长目录、10 张表格与架构图。</p>
+  </header>
+  <div class="toolbar">
+    <nav class="tabs" role="tablist" aria-label="选择博客主题">
+      <button class="tab" role="tab" id="tab-overview" data-theme="overview" aria-selected="true" aria-controls="gallery">总览</button>
+      <button class="tab" role="tab" id="tab-fuwari" data-theme="fuwari" aria-selected="false" aria-controls="viewer">Fuwari</button>
+      <button class="tab" role="tab" id="tab-hextra" data-theme="hextra" aria-selected="false" aria-controls="viewer">Hextra</button>
+      <button class="tab" role="tab" id="tab-blowfish" data-theme="blowfish" aria-selected="false" aria-controls="viewer">Blowfish</button>
+      <button class="tab" role="tab" id="tab-meme" data-theme="meme" aria-selected="false" aria-controls="viewer">MemE</button>
+    </nav>
+    <div class="tools" id="tools" hidden>
+      <label for="section" hidden>选择试读段落</label>
+      <select id="section" aria-label="选择试读段落">
+        <option value="top">文章开头</option>
+        <option value="主要发现">正文与列表</option>
+        <option value="国际主流产品与代表性独立产品">宽表格</option>
+        <option value="一个持续代理需要哪些层">架构图</option>
+      </select>
+      <a class="text-link" id="full" href="/fuwari/posts/personal-agents-2026/" target="_blank" rel="noopener">单独打开 ↗</a>
+      <a class="text-link" id="home" href="/fuwari/" target="_blank" rel="noopener">看主页 ↗</a>
+    </div>
+  </div>
+  <main>
+    <div class="gallery" id="gallery" role="tabpanel" aria-labelledby="tab-overview">
+      <article class="card">
+        <button class="image-button" data-theme="fuwari" aria-label="试读 Fuwari 主题"><img src="/screens/fuwari.jpg" alt="同一篇文章在 Fuwari 中的效果，白色卡片与淡蓝背景"></button>
+        <div class="caption"><div><h2><span class="label">01</span>Fuwari</h2><p>柔和卡片 · 蓝紫色 · 个人信息侧栏</p></div><button class="read-button" data-theme="fuwari">开始试读 →</button></div>
+      </article>
+      <article class="card">
+        <button class="image-button" data-theme="hextra" aria-label="试读 Hextra 主题"><img src="/screens/hextra.jpg" alt="同一篇文章在 Hextra 中的效果，清爽正文与右侧目录"></button>
+        <div class="caption"><div><h2><span class="label">02</span>Hextra</h2><p>清爽留白 · 右侧目录 · 技术长文</p></div><button class="read-button" data-theme="hextra">开始试读 →</button></div>
+      </article>
+      <article class="card">
+        <button class="image-button" data-theme="blowfish" aria-label="试读 Blowfish 主题"><img src="/screens/blowfish.jpg" alt="同一篇文章在 Blowfish 中的效果，悬浮导航与阅读目录"></button>
+        <div class="caption"><div><h2><span class="label">03</span>Blowfish</h2><p>现代个人站 · 悬浮导航 · 阅读模式</p></div><button class="read-button" data-theme="blowfish">开始试读 →</button></div>
+      </article>
+      <article class="card">
+        <button class="image-button" data-theme="meme" aria-label="试读 MemE 主题"><img src="/screens/meme.jpg" alt="同一篇文章在 MemE 中的效果，宋体正文与居中的书卷式排版"></button>
+        <div class="caption"><div><h2><span class="label">04</span>MemE</h2><p>中文宋体 · 书卷气 · 安静阅读</p></div><button class="read-button" data-theme="meme">开始试读 →</button></div>
+      </article>
+    </div>
+    <div id="viewer" role="tabpanel" hidden>
+      <p class="status" id="status" aria-live="polite"></p>
+      <div class="frame-wrap"><iframe id="preview" title="博客主题完整文章预览"></iframe></div>
+    </div>
+  </main>
+  <footer>实际主题代码渲染 · 中文字体本地加载 · 原始主题：<a href="https://github.com/saicaca/fuwari" target="_blank" rel="noopener">Fuwari</a> / <a href="https://github.com/imfing/hextra" target="_blank" rel="noopener">Hextra</a> / <a href="https://github.com/nunocoracao/blowfish" target="_blank" rel="noopener">Blowfish</a> / <a href="https://github.com/reuixiy/hugo-theme-meme" target="_blank" rel="noopener">MemE</a></footer>
+  <script>
+    const names={fuwari:'Fuwari',hextra:'Hextra',blowfish:'Blowfish',meme:'MemE'};
+    const tabs=[...document.querySelectorAll('.tab')];
+    const gallery=document.getElementById('gallery'),viewer=document.getElementById('viewer'),tools=document.getElementById('tools');
+    const preview=document.getElementById('preview'),section=document.getElementById('section');
+    const articlePath='/posts/personal-agents-2026/';
+    let current='overview';
+    function jump(){
+      const doc=preview.contentDocument;
+      if(!doc || !doc.body) return;
+      if(section.value==='top'){preview.contentWindow.scrollTo({top:0,behavior:'instant'});return;}
+      const heading=[...doc.querySelectorAll('h2,h3')].find(h=>h.textContent.includes(section.value));
+      if(heading) preview.contentWindow.scrollTo({top:heading.getBoundingClientRect().top + preview.contentWindow.scrollY - 24,behavior:'instant'});
+    }
+    function choose(theme){
+      if(theme!=='overview' && !names[theme]) return;
+      current=theme;window.scrollTo({top:0,behavior:'instant'});
+      tabs.forEach(t=>{const selected=t.dataset.theme===theme;t.setAttribute('aria-selected',selected);t.tabIndex=selected?0:-1;});
+      const overview=theme==='overview';
+      gallery.hidden=!overview;viewer.hidden=overview;tools.hidden=overview;
+      if(overview){history.replaceState(null,'','#overview');return;}
+      viewer.setAttribute('aria-labelledby',`tab-${theme}`);
+      document.getElementById('status').textContent=`${names[theme]} · 完整文章试读`;
+      const url=`/${theme}${articlePath}`;
+      document.getElementById('full').href=url;document.getElementById('home').href=`/${theme}/`;
+      preview.title=`${names[theme]} 博客完整文章预览`;
+      if(preview.getAttribute('src')!==url) preview.src=url; else jump();
+      history.replaceState(null,'',`#${theme}`);
+    }
+    document.querySelectorAll('button[data-theme]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.theme)));
+    tabs.forEach((tab,index)=>tab.addEventListener('keydown',event=>{
+      let next=index;
+      if(event.key==='ArrowRight')next=(index+1)%tabs.length;
+      else if(event.key==='ArrowLeft')next=(index+tabs.length-1)%tabs.length;
+      else if(event.key==='Home')next=0;else if(event.key==='End')next=tabs.length-1;else return;
+      event.preventDefault();tabs[next].focus();choose(tabs[next].dataset.theme);
+    }));
+    section.addEventListener('change',jump);
+    preview.addEventListener('load',()=>{const doc=preview.contentDocument;if(doc)doc.fonts.ready.then(jump);});
+    choose(location.hash.slice(1)||'overview');
+  </script>
+</body>
+</html>

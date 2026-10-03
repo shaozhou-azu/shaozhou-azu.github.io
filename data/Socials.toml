@@ -1,0 +1,13 @@
+[[socials]]
+id = "rss"
+url = "/rss.xml"
+icon = "rss"
+title = "RSS"
+weight = 1
+
+[[socials]]
+id = "github"
+url = "https://github.com/shaozhou-azu"
+icon = "github"
+title = "GitHub"
+weight = 2

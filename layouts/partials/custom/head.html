@@ -1,0 +1,16 @@
+{{- $content := .Content -}}
+<link rel="stylesheet" href="{{ "vendor/noto-serif-sc/index.css" | relURL }}">
+{{- $style := resources.Get "css/custom.css" | resources.Minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous">
+{{- if .Param "math" }}
+<link rel="stylesheet" href="{{ "vendor/katex/katex.min.css" | relURL }}">
+<script defer src="{{ "vendor/katex/katex.min.js" | relURL }}"></script>
+<script defer src="{{ "vendor/katex/auto-render.min.js" | relURL }}"></script>
+{{- $math := resources.Get "js/math.js" | resources.Minify | fingerprint }}
+<script defer src="{{ $math.RelPermalink }}" integrity="{{ $math.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}
+{{- if .Store.Get "hasMermaid" }}
+<script defer src="{{ "vendor/mermaid/mermaid.tiny.js" | relURL }}"></script>
+{{- $diagrams := resources.Get "js/diagrams.js" | resources.Minify | fingerprint }}
+<script defer src="{{ $diagrams.RelPermalink }}" integrity="{{ $diagrams.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end }}

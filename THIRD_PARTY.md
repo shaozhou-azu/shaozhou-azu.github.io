@@ -1,12 +1,20 @@
 # Third-party components
 
-## PaperMod
+## MemE
 
-- Source: https://github.com/adityatelange/hugo-PaperMod
-- Pinned commit: `d3768854d00ad003b0a8dbdba254ce9224377a01`
-- License: MIT, preserved at `themes/PaperMod/LICENSE`.
+- Source: https://github.com/reuixiy/hugo-theme-meme
+- Pinned commit: `cf2d984118c34acc8b4e00da50b5c39aa305b8ac`.
+- License: MIT, preserved at `themes/meme/LICENSE`.
 - Installed as a Git submodule.
-- Three project-level template overrides (`layouts/baseof.html`, `layouts/rss.xml`, and `layouts/_partials/templates/opengraph.html`) replace deprecated Hugo language properties with `Locale` and `Direction`.
+- Project-level templates adapt current Hugo language/data interfaces, Dart Sass, the site's favicons, homepage introduction, RSS links and per-page metadata/TOC settings. Upstream source is unchanged.
+
+## Dart Sass
+
+- Source: https://github.com/sass/dart-sass
+- Version: `1.105.1`.
+- Native distributions: official `sass-embedded` packages for macOS/Linux, ARM64/x64, from npm.
+- Package URLs and pinned SHA-512 integrity values are in `scripts/sass-packages.json`; integrity is verified before extracting.
+- Downloaded tooling remains under `.local/sass/`; each upstream package includes its license. No Sass executable is served by the website.
 
 ## KaTeX
 
@@ -17,13 +25,13 @@
 - License: MIT, preserved at `static/vendor/katex/LICENSE`.
 - Only the browser distribution, WOFF2 fonts, and license are included. The CSS font sources are reduced to WOFF2 to match the vendored font files.
 
-## Noto Sans SC
+## Noto Serif SC
 
 - Source: https://github.com/notofonts/noto-cjk
-- Distribution: `@fontsource-variable/noto-sans-sc`, version `5.3.0` (Google Fonts revision `v40`).
-- Package: https://registry.npmjs.org/@fontsource-variable/noto-sans-sc/-/noto-sans-sc-5.3.0.tgz
-- Package integrity: `sha512-lNar1dF7Ik/lHNPo/7JWG0TolXY29LtsqYgMvEysooZ5bsO9uH4shJmRrwyJ3PjyTPljhpMJEK0jDuLSU4vJ1w==`, verified before extracting.
-- License: SIL Open Font License 1.1, preserved at `static/vendor/noto-sans-sc/LICENSE`.
+- Distribution: `@fontsource-variable/noto-serif-sc`, version `5.3.0`.
+- Package: https://registry.npmjs.org/@fontsource-variable/noto-serif-sc/-/noto-serif-sc-5.3.0.tgz
+- Package integrity: `sha512-7LcN2NEf4HDjoSkGWc79WqDDyMK8JvSPdA/gsHjJpZ8l9A9mcK/GQTazp3klmkBwJooy0eqeNvlmaZFXPupHrA==`, verified before extracting.
+- License: SIL Open Font License 1.1, preserved at `static/vendor/noto-serif-sc/LICENSE`.
 - The original variable WOFF2 files and `index.css` are self-hosted unchanged. Unicode ranges load only the font subsets needed by each page.
 
 ## Mermaid Tiny

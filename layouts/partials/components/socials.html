@@ -1,0 +1,16 @@
+{{ if .Site.Params.enableSocials }}
+    {{ with hugo.Data.Socials }}
+        <ul class="socials">
+            {{- range sort .socials "weight" -}}
+                {{- $url := .url -}}
+                {{- $external := strings.HasPrefix $url "https://" -}}
+                {{- if not $external }}{{ $url = $url | relURL }}{{ end -}}
+                <li class="socials-item">
+                    <a href="{{ $url | safeURL }}"{{ if $external }} target="_blank" rel="external noopener"{{ end }} title="{{ .title }}">
+                        {{- partial "utils/icon.html" (dict "$" $ "name" .icon "class" "social-icon") -}}
+                    </a>
+                </li>
+            {{- end -}}
+        </ul>
+    {{ end }}
+{{ end }}

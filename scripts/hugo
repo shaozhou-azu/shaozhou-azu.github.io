@@ -4,6 +4,8 @@ set -euo pipefail
 
 project_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 version="$(tr -d '[:space:]' < "${project_root}/.hugo-version")"
+sass_bin_dir="$(python3 "${project_root}/scripts/setup-sass.py")"
+export PATH="${sass_bin_dir}:${PATH}"
 
 case "$(uname -s)" in
   Darwin) platform="darwin-universal" ;;

@@ -1,0 +1,72 @@
+/* Keep the paper background continuous; fade only the pastel decoration. */
+.header {
+  isolation: isolate;
+  background: var(--color-bg);
+  transition: background-color 0.5s;
+}
+
+.header-wrapper {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: calc(100% + 6rem);
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  background: linear-gradient(
+    90deg,
+    rgb(247 149 51 / 7%) 0%,
+    rgb(243 112 85 / 7%) 15%,
+    rgb(239 78 123 / 7%) 30%,
+    rgb(161 102 171 / 7%) 44%,
+    rgb(80 115 184 / 7%) 58%,
+    rgb(16 152 173 / 7%) 72%,
+    rgb(7 179 155 / 7%) 86%,
+    rgb(109 186 130 / 7%) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom, #000 0%, rgb(0 0 0 / 60%) 35%, transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom, #000 0%, rgb(0 0 0 / 60%) 35%, transparent 100%
+  );
+}
+
+:root[data-theme="dark"] .header::before {
+  opacity: 0.65;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .header::before {
+    opacity: 0.65;
+  }
+}
+
+
+body { font-family: "Noto Serif SC Variable", "Songti SC", serif; }
+.content, .prose, .post-content, .custom-md { min-width: 0; }
+.content p, .content li, .prose p, .prose li, .custom-md p, .custom-md li { line-height: 1.9; }
+.table-scroll { max-width: 100%; overflow-x: auto; margin: 1.8em 0; overscroll-behavior-x: contain; }
+.table-scroll:focus-visible { outline: 2px solid #6366f1; outline-offset: 4px; }
+.table-scroll table { display: table !important; width: 100%; margin: 0; font-size: 14px; border-collapse: collapse; }
+.table-scroll[data-columns="3"] table { min-width: 560px; }
+.table-scroll[data-columns="4"] table { min-width: 760px; }
+.table-scroll.table-wide table { min-width: 960px; }
+.table-scroll th, .table-scroll td { padding: 12px 16px; line-height: 1.8; word-break: normal; overflow-wrap: normal; vertical-align: top; }
+.table-scroll.table-wide th:first-child, .table-scroll.table-wide td:first-child { white-space: nowrap; }
+.diagram { max-width: 100%; overflow-x: auto; margin: 2em 0; padding: 20px 12px; border: 1px solid #b6bec955; border-radius: 10px; }
+.diagram pre.mermaid { padding: 0; margin: 0; background: transparent; border: 0; font-family: inherit; line-height: 1.6; }
+.diagram svg { display: block; margin: auto; max-width: none !important; }
+
+.article-contents {margin: 2.5em 0; border-top: 1px solid #aeb6c444; border-bottom: 1px solid #aeb6c444; padding: .8em 0;} .article-contents summary {cursor:pointer; font-size:15px; color:#707a8b;} .article-contents .contents {margin:1em 0; max-height:24rem; overflow-y:auto;}
+
+.home-intro {margin: 0 auto 4em; max-width: 42em;}
+.home-intro h1 {font-size: 1.8em; margin: 0 0 .7em;}
+.home-intro p {color: var(--color-contrast-medium); line-height: 2;}
+.home .summary-title-link {display: inline-block;}

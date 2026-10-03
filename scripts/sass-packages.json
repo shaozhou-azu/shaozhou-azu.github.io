@@ -1,0 +1,26 @@
+{
+  "darwin-arm64": {
+    "package": "sass-embedded-darwin-arm64",
+    "version": "1.105.1",
+    "url": "https://registry.npmjs.org/sass-embedded-darwin-arm64/-/sass-embedded-darwin-arm64-1.105.1.tgz",
+    "integrity": "sha512-75qVpHj0qwJKWOo+ZA5NPVFnOGfRrUiBdnLR0dPqsvzp3acvb5gBevptqTtJjVWubpYRIjcRdDDjmeWoXnfacQ=="
+  },
+  "darwin-x64": {
+    "package": "sass-embedded-darwin-x64",
+    "version": "1.105.1",
+    "url": "https://registry.npmjs.org/sass-embedded-darwin-x64/-/sass-embedded-darwin-x64-1.105.1.tgz",
+    "integrity": "sha512-5TV8xyZrOO89ky752favkTuyz9O2hOB2aMoiUpMTk0rFr+UVANcXdIrEvJ9WKoqTHaszim7un3jADumunpW7zQ=="
+  },
+  "linux-arm64": {
+    "package": "sass-embedded-linux-arm64",
+    "version": "1.105.1",
+    "url": "https://registry.npmjs.org/sass-embedded-linux-arm64/-/sass-embedded-linux-arm64-1.105.1.tgz",
+    "integrity": "sha512-arALlVQkXjxN1RPaQR41vbDYXrTIdXwPtEzBWRkOg7FdIN/dSohY8ik96M6M3MSc+niV/UIC7BO47PcspzJGpw=="
+  },
+  "linux-x64": {
+    "package": "sass-embedded-linux-x64",
+    "version": "1.105.1",
+    "url": "https://registry.npmjs.org/sass-embedded-linux-x64/-/sass-embedded-linux-x64-1.105.1.tgz",
+    "integrity": "sha512-YF4OyymSlm26OcdPovIZL1blzjTxf5yN/rzgTmoGqAjEk57+yIuYo+7jBCgSQZFov8Rn4uHhZT+u0cpzxNFMRg=="
+  }
+}

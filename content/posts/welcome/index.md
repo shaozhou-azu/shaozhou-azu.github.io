@@ -7,7 +7,7 @@ description: 一篇示例文章，展示正文、目录、代码和公式的阅�
 summary: 欢迎来到我的博客。这篇示例展示了正文、目录、代码和公式的阅读效果。
 tags: [随笔, 写作]
 math: true
-showtoc: true
+toc: true
 ---
 
 欢迎来到 Azu 的博客。这是一篇示例文章，用来展示网站的阅读效果。

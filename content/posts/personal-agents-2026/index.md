@@ -7,8 +7,7 @@ description: 从 Meta Muse 与 Cue 出发，梳理个人代理的产品演进、
 summary: 一篇完整的研究长文，覆盖国际与中国产品、Work Agent 与 Personal Agent 的边界、持续运行架构和后续评估方法。
 tags: [研究, AI Agent, 产品]
 math: false
-showtoc: true
-tocopen: false
+toc: true
 ---
 
 研究截止时间为 **2026年10月3日**。本报告从 Meta Muse 出发，覆盖 20 家公司或产品团队的个人代理、工作代理与相邻助手，以及 OpenClaw、Hermes 两个有代表性的开源运行平台。这20家并非全部提供同类 Personal Agent。重点研究个人代理的发展，同时用工作代理比较产品定位、技术形态和价值验证。

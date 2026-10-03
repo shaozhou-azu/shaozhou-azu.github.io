@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const article = document.querySelector(".post-content");
+  const article = document.querySelector(".post-body");
   if (!article || typeof renderMathInElement !== "function") return;
 
   renderMathInElement(article, {

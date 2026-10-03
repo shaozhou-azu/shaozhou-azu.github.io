@@ -1,0 +1,30 @@
+[
+  {
+    "theme": "hextra",
+    "source": "https://github.com/imfing/hextra",
+    "archive": "https://codeload.github.com/imfing/hextra/tar.gz/refs/heads/main",
+    "downloaded": "2026-10-03",
+    "sha256": "e57e111f0a7d213260c1e79a41c7a35d0a86f736e5dfbdb246929c38a6cb7094"
+  },
+  {
+    "theme": "blowfish",
+    "source": "https://github.com/nunocoracao/blowfish",
+    "archive": "https://codeload.github.com/nunocoracao/blowfish/tar.gz/refs/heads/main",
+    "downloaded": "2026-10-03",
+    "sha256": "363cac1d91058a0700800d334775958d01c8340075571eb517124cae063eccfe"
+  },
+  {
+    "theme": "meme",
+    "source": "https://github.com/reuixiy/hugo-theme-meme",
+    "archive": "https://codeload.github.com/reuixiy/hugo-theme-meme/tar.gz/refs/heads/main",
+    "downloaded": "2026-10-03",
+    "sha256": "4281aaeebe31f58874d866d9fc8a804e38ed15d98dfe00956eecdc9463b780f7"
+  },
+  {
+    "theme": "fuwari",
+    "source": "https://github.com/saicaca/fuwari",
+    "archive": "https://codeload.github.com/saicaca/fuwari/tar.gz/refs/heads/main",
+    "downloaded": "2026-10-03",
+    "sha256": "65055f6858b35a6dd843896a516298c94ac37ec94eac3292f9233179cc841c67"
+  }
+]

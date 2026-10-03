@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="{{ "vendor/noto-serif-sc/index.css" | relURL }}">
+<link rel="stylesheet" href="{{ "preview.css" | relURL }}">
+<link rel="stylesheet" href="{{ "meme-header.css" | relURL }}">
+{{ if .Params.preview }}
+<script defer src="{{ "vendor/mermaid/preview-mermaid.js" | relURL }}"></script>
+<script defer src="{{ "preview-diagrams.js" | relURL }}"></script>
+{{ end }}
+<style>body {font-family: "Noto Serif SC Variable", "Songti SC", serif;} #TableOfContents {max-height: 24rem; overflow-y: auto;}</style>

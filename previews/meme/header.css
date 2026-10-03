@@ -1,0 +1,49 @@
+/* Keep the paper background continuous; fade only the pastel decoration. */
+.header {
+  isolation: isolate;
+  background: var(--color-bg);
+  transition: background-color 0.5s;
+}
+
+.header-wrapper {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: calc(100% + 6rem);
+  z-index: -1;
+  pointer-events: none;
+  transition: opacity 0.5s;
+  background: linear-gradient(
+    90deg,
+    rgb(247 149 51 / 7%) 0%,
+    rgb(243 112 85 / 7%) 15%,
+    rgb(239 78 123 / 7%) 30%,
+    rgb(161 102 171 / 7%) 44%,
+    rgb(80 115 184 / 7%) 58%,
+    rgb(16 152 173 / 7%) 72%,
+    rgb(7 179 155 / 7%) 86%,
+    rgb(109 186 130 / 7%) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom, #000 0%, rgb(0 0 0 / 60%) 35%, transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom, #000 0%, rgb(0 0 0 / 60%) 35%, transparent 100%
+  );
+}
+
+:root[data-theme="dark"] .header::before {
+  opacity: 0.65;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .header::before {
+    opacity: 0.65;
+  }
+}
