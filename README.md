@@ -4,6 +4,8 @@
 
 站点名称和介绍暂用 Azu，可在 `hugo.yaml` 中修改。
 
+中文与英文正文统一使用 Noto Sans SC 可变字体，标题采用较轻的中等字重。字体随网站本地托管，浏览器按页面实际使用的字符加载分片；不需要读者安装字体或访问 Google Fonts。字号、字重和行距集中在 `assets/css/extended/custom.css` 中调整。
+
 ## 本地预览
 
 需要 Git、curl 和 macOS 或 Linux。Hugo 会由脚本下载到项目内的 `.local/`，使用 `.hugo-version` 中固定的版本，并验证官方 SHA-256 校验值；不需要安装 Node.js 或全局 Hugo。
