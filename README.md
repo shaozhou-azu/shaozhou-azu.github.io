@@ -43,7 +43,7 @@ cd azu_homepage
 
 公式需要设置 `math: true`，支持 `\(a^2+b^2=c^2\)` 和 `$$ ... $$`。流程图直接使用 `mermaid` 代码块，网站会自动按需加载本地渲染器。
 
-`content/posts/personal-agents-2026/` 保存完整研究示例，包括 10 张表格、一张架构图及 44 条来源附件。它目前是草稿；源文件随仓库保存，`draft` 只控制网站输出。
+`content/posts/personal-agents-2026/` 保存完整研究示例，包括 10 张表格、一张架构图及 44 条来源附件。两篇示例目前都是草稿，发布构建不会包含它们；源文件随仓库保存，`draft` 只控制网站输出。
 
 ## 构建与发布
 
@@ -55,8 +55,8 @@ cd azu_homepage
 
 GitHub Actions 在推送或拉取请求时检查构建。初次建库不会自动上线。准备发布时：
 
-1. 在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**。
-2. 在 **Actions → Build and deploy to GitHub Pages → Run workflow** 勾选 `publish`，运行工作流。
+1. 仓库 **Settings → Pages → Source** 已设置为 **GitHub Actions**，分支发布已关闭。
+2. 在 **Actions → Website checks and manual publishing → Run workflow** 勾选 `publish`，运行工作流。
 3. 工作流成功后访问网站地址。
 
 只有手动勾选 `publish` 才执行部署；草稿不会进入发布产物。GitHub Actions 会读取 Pages 的实际网址，也支持子目录部署。

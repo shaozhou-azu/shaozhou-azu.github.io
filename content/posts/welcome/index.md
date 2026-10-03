@@ -2,7 +2,7 @@
 title: 从这里开始
 date: 2026-10-03T00:00:00+08:00
 slug: welcome
-draft: false
+draft: true
 description: 一篇示例文章，展示正文、目录、代码和公式的阅读效果。
 summary: 欢迎来到我的博客。这篇示例展示了正文、目录、代码和公式的阅读效果。
 tags: [随笔, 写作]
