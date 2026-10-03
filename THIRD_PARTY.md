@@ -25,3 +25,12 @@
 - Package integrity: `sha512-lNar1dF7Ik/lHNPo/7JWG0TolXY29LtsqYgMvEysooZ5bsO9uH4shJmRrwyJ3PjyTPljhpMJEK0jDuLSU4vJ1w==`, verified before extracting.
 - License: SIL Open Font License 1.1, preserved at `static/vendor/noto-sans-sc/LICENSE`.
 - The original variable WOFF2 files and `index.css` are self-hosted unchanged. Unicode ranges load only the font subsets needed by each page.
+
+## Mermaid Tiny
+
+- Source: https://github.com/mermaid-js/mermaid
+- Distribution: `@mermaid-js/tiny`, version `12.1.0`.
+- Package: https://registry.npmjs.org/@mermaid-js/tiny/-/tiny-12.1.0.tgz
+- Package integrity: `sha512-z/N9vnXv+5Ffcdj19viXxPhSy7Jt5y4vtS+Aa9iZVGIo2U0KKNgO2U+xm8plHh3y5eUVkschMCXfc/DIz8A6uQ==`, verified before extracting.
+- License: MIT, preserved at `static/vendor/mermaid/LICENSE`; bundled license comments in `mermaid.tiny.js` are retained.
+- The browser bundle is self-hosted unchanged and loaded only on pages with Mermaid code blocks. Tiny supports the example flowchart; it omits some advanced diagram types and layouts.

@@ -1,0 +1,4 @@
+<div class="diagram">
+  <pre class="mermaid" aria-label="文章中的流程图">{{ .Inner | htmlEscape | safeHTML }}</pre>
+</div>
+{{- .Page.Store.Set "hasMermaid" true -}}
